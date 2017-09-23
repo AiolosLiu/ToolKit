@@ -1,11 +1,8 @@
-import com.sun.org.apache.xpath.internal.operations.String;
-
-import sun.applet.Main;
-import sun.security.mscapi.KeyStore.ROOT;
-
 /**
 *@author: Luke
 */
+import java.util.HashMap;
+import java.util.Map;
 
 public class trieTree{
 	
