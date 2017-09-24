@@ -1,11 +1,9 @@
-package h;
-
 public class MergeSort {
 	public void sort(int[] nums){
 		if (nums == null || nums.length == 0){
 			return;
 		}
-
+		
 		mergeSort(0, nums.length - 1, nums);
 	}
 	
@@ -58,5 +56,4 @@ public class MergeSort {
 			System.out.print(n + " ");
 		}
 	}
-
 }
