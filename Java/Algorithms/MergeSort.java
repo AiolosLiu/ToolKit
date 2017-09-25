@@ -3,27 +3,26 @@ public class MergeSort {
 		if (nums == null || nums.length == 0){
 			return;
 		}
-		
-		mergeSort(0, nums.length - 1, nums);
+		int[] temp = new int[nums.length];
+		mergeSort(0, nums.length - 1, nums, temp);
 	}
 	
-	private void mergeSort(int beg, int end, int[] nums){
+	private void mergeSort(int beg, int end, int[] nums, int[] temp){
 		if (beg >= end){
 			return;
 		}
 		
 		int mid = beg + (end - beg) / 2;
 		
-		mergeSort(beg, mid, nums);
-		mergeSort(mid + 1, end, nums);
-		merge(beg, end, nums);
+		mergeSort(beg, mid, nums, temp);
+		mergeSort(mid + 1, end, nums, temp);
+		merge(beg, end, nums, temp);
 	}
-	private void merge(int beg, int end, int[] nums) {
+	private void merge(int beg, int end, int[] nums, int[] temp) {
 		int left   = beg + (end - beg) / 2;
 		int right  = left + 1;
 		int len    = end - beg + 1;
-		int index  = 0;
-		int[] temp = new int[len];
+		int index  = beg;
 
 		while (beg <= left && right <= end){
 			if (nums[beg] <= nums[right] ){
@@ -42,8 +41,8 @@ public class MergeSort {
 			++ right;
 		}
 		
-		for (int i = end; i >= end - len + 1; -- i, -- index){
-			nums[i] = temp[index - 1];
+		for (int i = 0; i < len; ++ i){
+			nums[end - i] = temp[end - i];
 		}
 	}
 
@@ -57,3 +56,4 @@ public class MergeSort {
 		}
 	}
 }
+
