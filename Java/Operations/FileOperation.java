@@ -67,13 +67,13 @@ public class FileOperation {
 	}
 
 	public static void listDictionary(String dir) {
-        try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(dir))) {
-            for (Path path : directoryStream) {
-                System.out.println("-" + path.toString());
-            }
-        } catch (IOException e) {
-        	e.printStackTrace();
-        }
+		try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(dir))) {
+		    for (Path path : directoryStream) {
+			System.out.println("-" + path.toString());
+		    }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void deleteFile(String fileName) {
@@ -120,6 +120,7 @@ public class FileOperation {
 			e.printStackTrace();
 		}
 	}
+	
 	public static void creatFile(String fileName, Scanner scan) {
 		writeFile(fileName,scan,StandardOpenOption.CREATE_NEW);
 	} 
