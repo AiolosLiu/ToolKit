@@ -55,7 +55,7 @@ public class FileOperation {
 
 	}
 
-	private static void help() {
+	public static void help() {
 		// TODO Auto-generated method stub
 		System.out.println("Please choose an operation");
 		System.out.println("c - create a new file");
@@ -66,7 +66,7 @@ public class FileOperation {
 		System.out.println("q - exit the application");
 	}
 
-	private static void listDictionary(String dir) {
+	public static void listDictionary(String dir) {
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(dir))) {
             for (Path path : directoryStream) {
                 System.out.println("-" + path.toString());
@@ -76,7 +76,7 @@ public class FileOperation {
         }
 	}
 
-	private static void deleteFile(String fileName) {
+	public static void deleteFile(String fileName) {
 		Path file = Paths.get(fileName);
 		try {
 			Files.deleteIfExists(file);
@@ -87,7 +87,7 @@ public class FileOperation {
 		}
 	}
 
-	private static void writeFile(String fileName, Scanner scan, OpenOption options) {
+	public static void writeFile(String fileName, Scanner scan, OpenOption options) {
 		List<String> lines = new LinkedList<>();
 		System.out.println("Please input the content, output exit() to exit");
 		
@@ -105,7 +105,7 @@ public class FileOperation {
 		}
 	}
 
-	private static void readFile(String fileName) {
+	public static void readFile(String fileName) {
 		Path file = Paths.get(fileName);
 		try {
 			if(!Files.exists(file,LinkOption.NOFOLLOW_LINKS)){
@@ -120,7 +120,7 @@ public class FileOperation {
 			e.printStackTrace();
 		}
 	}
-	private static void creatFile(String fileName, Scanner scan) {
+	public static void creatFile(String fileName, Scanner scan) {
 		writeFile(fileName,scan,StandardOpenOption.CREATE_NEW);
 	} 
 }
