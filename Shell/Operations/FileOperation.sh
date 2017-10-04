@@ -1,5 +1,12 @@
 #!/bin/sh
 
+#-eq  #Is equal
+#-ne  #Is not equal
+#-lt  #Less than
+#-le  #Less than or equal
+#-gt  #Greater than
+#-ge  #Greater than or equal
+
 OP=$1
 
 case "$OP" in
