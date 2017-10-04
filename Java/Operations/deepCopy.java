@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 public class deepCopy {
 	 public static Object deepClone(Object object) {
 		 try {
-			 //object should implements java.io.Serializable
+			 //object should implement java.io.Serializable
 		     ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		     ObjectOutputStream oos = new ObjectOutputStream(baos);
 		     oos.writeObject(object);
