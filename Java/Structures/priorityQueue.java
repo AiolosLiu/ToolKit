@@ -31,8 +31,8 @@ public class priorityQueue {
 		Queue<TestEntity> customerPriorityQueue = new PriorityQueue<>(7, new Comparator<TestEntity>(){
 			@Override
 			public int compare(TestEntity t1, TestEntity t2) {
-	            return (t2.getId() - t1.getId());
-	        }
+			    return (t2.getId() - t1.getId());
+			}
 		});
 		Random rd = new Random();
 		for(int i = 0; i < 7; ++ i){
