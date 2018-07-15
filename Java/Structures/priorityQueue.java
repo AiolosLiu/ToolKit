@@ -11,7 +11,7 @@ public class priorityQueue {
 		// TODO Auto-generated method stub
 		Queue<Integer> integerPriorityQueue = new PriorityQueue<>(7);
 		Random rand = new Random();
-		for(int i = 0;i < 7;i ++){
+		for(int i = 0;i < 7; ++ i){
 			integerPriorityQueue.add(new Integer(rand.nextInt(100)));
 		}
 		
